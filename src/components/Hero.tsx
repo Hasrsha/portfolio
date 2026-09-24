@@ -58,9 +58,25 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
 
-          {/* Left Column */}
+          {/* Mobile: Photo on top centered | Desktop: hidden here, shown in right col */}
+          <div className="flex lg:hidden justify-center">
+            <div className="relative w-56 h-56 sm:w-64 sm:h-64 flex items-center justify-center">
+              <div className="absolute inset-0 rounded-full neon-halo -z-10 pointer-events-none" />
+              <div className="absolute inset-2 rounded-full p-1.5 bg-gradient-to-tr from-[#ec4899] via-[#8b5cf6] to-[#38bdf8] shadow-2xl">
+                <div className="w-full h-full rounded-full overflow-hidden bg-white border-4 border-white flex items-center justify-center shadow-inner">
+                  <img
+                    src="/profile.jpg"
+                    alt="Chevvu Harsha Vardhan Reddy"
+                    className="w-full h-full object-cover object-top pointer-events-none"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Left Column — Text */}
           <div className="lg:col-span-7 text-left space-y-6">
 
             {/* Bold Stacked Title */}
@@ -158,8 +174,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
           </div>
 
-          {/* Right Column: Static Profile Photo */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-center">
+          {/* Right Column: Static Profile Photo — Desktop only */}
+          <div className="hidden lg:flex lg:col-span-5 flex-col items-center justify-center">
             <div className="relative w-72 h-72 sm:w-88 sm:h-88 lg:w-96 lg:h-96 flex items-center justify-center">
 
               {/* Neon Halo Glow */}

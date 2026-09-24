@@ -90,8 +90,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
             })}
           </nav>
 
-          {/* Right Action button: Resume */}
-          <div className="hidden md:flex items-center gap-3">
+          {/* Right Action button: Resume — Desktop only */}
+          <div className="hidden lg:flex items-center gap-3">
             <button
               onClick={onOpenResume}
               className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white shadow-lg shadow-purple-950/60 hover:-translate-y-0.5 active:translate-y-0 transition-all"
@@ -101,20 +101,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex lg:hidden items-center gap-2">
-            <button
-              onClick={onOpenResume}
-              className="p-2 rounded-lg bg-purple-900/40 border border-purple-800/60 text-purple-300 text-xs font-semibold"
-            >
-              Resume
-            </button>
+          {/* Mobile: Hamburger ☰ only */}
+          <div className="flex lg:hidden items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg border bg-[#151128] border-purple-900/40 text-slate-200"
+              className="w-10 h-10 flex items-center justify-center rounded-xl border border-purple-800/60 bg-[#1a1035] text-slate-200 hover:text-white hover:border-purple-500 transition-all"
               aria-label="Open menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen
+                ? <X className="w-5 h-5" />
+                : (
+                  <span className="flex flex-col gap-[5px] items-center justify-center">
+                    <span className="block w-5 h-0.5 bg-slate-300 rounded-full" />
+                    <span className="block w-5 h-0.5 bg-slate-300 rounded-full" />
+                    <span className="block w-5 h-0.5 bg-slate-300 rounded-full" />
+                  </span>
+                )
+              }
             </button>
           </div>
         </div>

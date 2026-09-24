@@ -108,16 +108,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
               className="w-10 h-10 flex items-center justify-center rounded-xl border border-purple-800/60 bg-[#1a1035] text-slate-200 hover:text-white hover:border-purple-500 transition-all"
               aria-label="Open menu"
             >
-              {mobileMenuOpen
-                ? <X className="w-5 h-5" />
-                : (
-                  <span className="flex flex-col gap-[5px] items-center justify-center">
-                    <span className="block w-5 h-0.5 bg-slate-300 rounded-full" />
-                    <span className="block w-5 h-0.5 bg-slate-300 rounded-full" />
-                    <span className="block w-5 h-0.5 bg-slate-300 rounded-full" />
-                  </span>
-                )
-              }
+              {mobileMenuOpen ? (
+                <X className="w-6 h-6 text-purple-200" />
+              ) : (
+                <Menu className="w-6 h-6 text-purple-200" />
+              )}
             </button>
           </div>
         </div>

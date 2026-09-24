@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+}
+
+html, body {
+  font-family: var(--font-sans);
+  background-color: #090715 !important;
+  color: #f1f5f9;
+  min-height: 100vh;
+}
+
+.font-mono-code {
+  font-family: var(--font-mono);
+}
+
+/* Deep atmospheric midnight gradient from reference */
+.bg-deep-space {
+  background-color: #090715;
+  background-image: 
+    radial-gradient(circle at 75% 35%, rgba(88, 44, 145, 0.45) 0%, rgba(25, 18, 48, 0.7) 45%, #090715 75%),
+    radial-gradient(circle at 20% 70%, rgba(55, 25, 95, 0.35) 0%, transparent 60%),
+    linear-gradient(180deg, #090715 0%, #0c091d 50%, #090715 100%);
+  background-attachment: fixed;
+}
+
+/* Glowing Neon Halo effect around Avatar from reference */
+.neon-halo {
+  box-shadow: 
+    0 0 50px 15px rgba(168, 85, 247, 0.45),
+    0 0 100px 35px rgba(124, 58, 237, 0.3),
+    0 0 150px 70px rgba(236, 72, 153, 0.2);
+}
+
+/* Star dust particle background */
+.space-particles {
+  background-image: 
+    radial-gradient(rgba(192, 132, 252, 0.3) 1px, transparent 1px),
+    radial-gradient(rgba(147, 197, 253, 0.25) 1px, transparent 1px);
+  background-size: 70px 70px, 110px 110px;
+  background-position: 0 0, 35px 35px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090715;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #281f44;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f316a;
+}
+
+/* Code tokens */
+.token-keyword { color: #f43f5e; font-weight: 600; }
+.token-function { color: #38bdf8; font-weight: 500; }
+.token-string { color: #34d399; }
+.token-comment { color: #64748b; font-style: italic; }
+.token-param { color: #fbbf24; }
+.token-class { color: #c084fc; font-weight: 600; }
+.token-number { color: #fb923c; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
